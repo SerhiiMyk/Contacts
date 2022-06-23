@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ContactsPageComponent } from './components/contacts-page/contacts-page.component';
 import { ContactDetailsPageComponent } from './components/contact-details-page/contact-details-page.component';
 import { AddContactModalComponent } from './components/add-contact-modal/add-contact-modal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AddContactModalComponent } from './components/add-contact-modal/add-con
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
