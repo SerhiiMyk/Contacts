@@ -1,22 +1,28 @@
 <div class="contacts">
-  <div class="contacts-search">
-    <input type="text" [(ngModel)]="searchStr">
-    <button (click)="search()">Search</button>
-    <button (click)="cleanSearchField()">clean</button>
-  </div>
-  <div>
-    <h1>Contacts</h1>
-    <i (click)="sort('desc')">+</i>
-    <i (click)="sort('asc')">-</i>
-    <button (click)="showModal=true">add</button>
-  </div>
-  <div *ngFor="let contact of contacts">
-    <div>
-      <span [routerLink]="[contact.id]">{{contact.name}}</span>
-      <button (click)="delete(contact.id)">dell</button>
+  <div class="contacts-wrap">
+    <div class="contacts-search">
+      <div class="input-div">
+        <span class="material-icons">search</span>
+        <input type="text" [(ngModel)]="searchStr" placeholder="Search...">
+      </div>
+      <button class="search-btn" (click)="search()">Search</button>
+      <button class="cancel-btn" (click)="cleanSearchField()">clean</button>
+    </div>
+    <div class="contacts-head">
+      <h1>Contacts</h1>
+      <span (click)="sort('desc')" class="material-icons red">south</span>
+      <span (click)="sort('asc')" class="material-icons green">north</span>
+      <span (click)="showModal=true" class="material-icons">add</span>
+    </div>
+    <hr class="header-border">
+    <div class="contact" *ngFor="let contact of contacts; let ind = index">
+      <div [routerLink]="[contact.id]">
+        <p class="contact-number">{{ind + 1}}.</p>
+        <p class="contact-name">{{contact.name}}</p>
+      </div>
+      <span (click)="delete(contact.id)" class="material-icons">delete</span>
     </div>
   </div>
 </div>
 <app-add-contact-modal *ngIf="showModal"></app-add-contact-modal>
-<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
 

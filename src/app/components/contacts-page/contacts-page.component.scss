@@ -1,0 +1,151 @@
+.contacts {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  min-width: 500px;
+
+  &-wrap {
+    padding: 30px;
+    box-shadow: 1px 1px 15px grey;
+    border-radius: 5px;
+  }
+
+  &-search {
+    display: flex;
+
+    .input-div {
+      position: relative;
+
+      span {
+        position: absolute;
+        right: 0;
+        top: 2px;
+        color: grey;
+      }
+
+      input {
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid grey;
+        font-size: 16px;
+        outline-style: none;
+        padding: 5px 5px;
+
+        &:focus {
+          border-bottom: 2px solid darkblue;
+        }
+      }
+    }
+
+    button {
+      font-size: 16px;
+      height: 30px;
+      background: #f8ad90;
+      border: none;
+      margin-left: 10px;
+      padding: 0 10px;
+      border-radius: 5px;
+
+      &:hover {
+        background: lighten(#f8ad90, 10%);
+      }
+    }
+
+    .cancel-btn {
+      background: #72cec9;
+
+      &:hover {
+        background: lighten(#72cec9, 10%);
+      }
+
+    }
+  }
+
+  &-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+
+    h1 {
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .material-icons {
+      cursor: pointer;
+
+      &:nth-child(2) {
+        color: green;
+        margin-left: 15px;
+
+        &:hover {
+          color: lighten(green, 10%)
+        }
+      }
+
+      &:nth-child(3) {
+        color: red;
+
+        &:hover {
+          color: lighten(red, 20%)
+        }
+      }
+
+      &:nth-child(4) {
+        position: absolute;
+        right: 5px;
+        font-size: 30px;
+        color: grey;
+
+        &:hover {
+          color: darken(grey, 30%)
+        }
+      }
+    }
+  }
+
+  .header-border {
+    height: 3px;
+    background-color: grey;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 1px;
+
+    &:nth-child(odd) {
+      background: #f3f8fd;
+    }
+
+    &:hover {
+      background: rgb(197, 195, 195, 0.4)
+    }
+
+    &-name {
+      display: inline-block;
+      font-size: 24px;
+      width: 200px;
+      cursor: pointer;
+    }
+
+    &-number {
+      display: inline-block;
+      font-size: 20px;
+      width: 40px;
+      color: grey;
+    }
+
+    span {
+      color: grey;
+      cursor: pointer;
+
+      &:hover {
+        color: darken(grey, 30)
+      }
+    }
+  }
+}
