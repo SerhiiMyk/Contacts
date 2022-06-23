@@ -7,6 +7,7 @@ import { ContactsPageComponent } from './components/contacts-page/contacts-page.
 import { ContactDetailsPageComponent } from './components/contact-details-page/contact-details-page.component';
 import { AddContactModalComponent } from './components/add-contact-modal/add-contact-modal.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

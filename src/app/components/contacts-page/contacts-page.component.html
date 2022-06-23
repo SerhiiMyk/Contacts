@@ -1,1 +1,21 @@
-<p>contacts-page works!</p>
+<div class="contacts">
+  <div class="contacts-search">
+    <input type="text" [(ngModel)]="searchStr">
+    <button (click)="search()">Search</button>
+    <button (click)="cleanSearchField()">clean</button>
+  </div>
+  <div>
+    <h1>Contacts</h1>
+    <i (click)="sort('desc')">+</i>
+    <i (click)="sort('asc')">-</i>
+    <button (click)="showModal=true">add</button>
+  </div>
+  <div *ngFor="let contact of contacts">
+    <div>
+      <span [routerLink]="[contact.id]">{{contact.name}}</span>
+      <button (click)="delete(contact.id)">dell</button>
+    </div>
+  </div>
+</div>
+<app-add-contact-modal *ngIf="showModal"></app-add-contact-modal>
+

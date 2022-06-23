@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { IContact } from '../interfaces/contact.interface';
 import { environment } from '../../environments/environment';
 import { IQuery } from '../interfaces/query.interface';
+import { IReceive } from '../interfaces/receive.interface';
 
 
 @Injectable({
@@ -14,9 +15,9 @@ export class ContactsService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getContacts(queryParams: IQuery): Observable<IContact[]> {
+  getContacts(queryParams: IQuery): Observable<IReceive> {
     let url = `${ environment.API }users?search=${ queryParams.search }&sort=${ queryParams.sort }&page=${ queryParams.page }&quantity=${ queryParams.quantity }`
-    return this.httpClient.get<IContact[]>(url)
+    return this.httpClient.get<IReceive>(url)
   }
 
   getContactById(id: number): Observable<IContact> {
@@ -33,5 +34,6 @@ export class ContactsService {
 
   deleteContact(id: number): void {
     this.httpClient.delete(`${ environment.API }deleteuser/${ id }`)
+      .subscribe(() =>{},(e) => e.status)
   }
 }
