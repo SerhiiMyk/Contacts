@@ -3,6 +3,7 @@ import { ContactsService } from '../../services/contacts.service';
 import { Subscription } from 'rxjs';
 import { IQuery } from '../../interfaces/query.interface';
 import { IContact } from '../../interfaces/contact.interface';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-contacts-page',
@@ -10,7 +11,7 @@ import { IContact } from '../../interfaces/contact.interface';
   styleUrls: ['./contacts-page.component.scss']
 })
 export class ContactsPageComponent implements OnInit, OnDestroy {
-  query: IQuery = { quantity: 50, page: 1, search: '', sort: null }
+  query: IQuery = { quantity: 10, page: 1, search: '', sort: null }
   contacts: IContact[] = []
   length!: number
   searchStr = ''
@@ -63,5 +64,11 @@ export class ContactsPageComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.getContactsSub()
     }, 50)
+  }
+
+  onPageChange(paginatorData: PageEvent) {
+    this.query.quantity = paginatorData.pageSize
+    this.query.page = paginatorData.pageIndex
+    this.getContactsSub()
   }
 }

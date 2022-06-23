@@ -5,8 +5,10 @@
         <span class="material-icons">search</span>
         <input type="text" [(ngModel)]="searchStr" placeholder="Search...">
       </div>
-      <button class="search-btn" (click)="search()">Search</button>
-      <button class="cancel-btn" (click)="cleanSearchField()">clean</button>
+      <div>
+        <button class="search-btn" (click)="search()">Search</button>
+        <button class="cancel-btn" (click)="cleanSearchField()">clean</button>
+      </div>
     </div>
     <div class="contacts-head">
       <h1>Contacts</h1>
@@ -22,6 +24,12 @@
       </div>
       <span (click)="delete(contact.id)" class="material-icons">delete</span>
     </div>
+    <mat-paginator
+      [length]="length"
+      [pageSize]="10"
+      [pageSizeOptions]="[5,10,15]"
+      (page)="onPageChange($event)">
+    </mat-paginator>
   </div>
 </div>
 <app-add-contact-modal *ngIf="showModal"></app-add-contact-modal>

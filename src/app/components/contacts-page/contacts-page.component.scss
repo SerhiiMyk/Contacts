@@ -5,13 +5,14 @@
   min-width: 500px;
 
   &-wrap {
-    padding: 30px;
+    padding: 30px 30px 10px 30px;
     box-shadow: 1px 1px 15px grey;
     border-radius: 5px;
   }
 
   &-search {
     display: flex;
+    justify-content: space-between;
 
     .input-div {
       position: relative;
@@ -24,6 +25,7 @@
       }
 
       input {
+        width: 225px;
         height: 30px;
         border: none;
         border-bottom: 1px solid grey;
@@ -66,11 +68,13 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 10px;
+    padding: 15px;
 
     h1 {
       display: inline-block;
       font-weight: 500;
+      font-size: 34px;
+      margin: 0;
     }
 
     .material-icons {
@@ -109,12 +113,13 @@
   .header-border {
     height: 3px;
     background-color: grey;
+    margin-bottom: 20px;
   }
 
   .contact {
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    padding: 10px;
     border-radius: 1px;
 
     &:nth-child(odd) {
@@ -130,6 +135,7 @@
       font-size: 24px;
       width: 200px;
       cursor: pointer;
+      margin: 0;
     }
 
     &-number {
@@ -137,6 +143,7 @@
       font-size: 20px;
       width: 40px;
       color: grey;
+      margin: 0;
     }
 
     span {
@@ -147,5 +154,8 @@
         color: darken(grey, 30)
       }
     }
+  }
+  mat-paginator{
+    margin-top: 15px;
   }
 }
