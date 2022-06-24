@@ -42,12 +42,14 @@ export class AddContactModalComponent implements OnChanges {
   }
 
   submitForm() {
+    let newContact = { ...this.form.value }
+    newContact.name = newContact.name.charAt(0).toUpperCase() + newContact.name.slice(1)
     if (this.modal) {
-      this.contactsService.addContact(this.form.value)
+      this.contactsService.addContact(newContact)
       this.modalEmit.emit(true)
     } else {
       const id = +this.activatedRoute.snapshot.params['id']
-      this.contactsService.updateContact(id, this.form.value)
+      this.contactsService.updateContact(id, newContact)
       this.router.navigate(['contacts'])
     }
   }
