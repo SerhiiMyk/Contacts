@@ -71,4 +71,13 @@ export class ContactsPageComponent implements OnInit, OnDestroy {
     this.query.page = paginatorData.pageIndex
     this.getContactsSub()
   }
+
+  emitHandler(value: boolean) {
+    if (value) {
+      setTimeout(() => {
+        this.getContactsSub()
+      }, 50)
+    }
+    this.showModal = false
+  }
 }

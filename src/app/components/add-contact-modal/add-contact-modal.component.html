@@ -1,1 +1,24 @@
-<p>add-contact-modal works!</p>
+<div [class.modal]="modal">
+  <div class="modal-div">
+    <span *ngIf="modal" (click)="closeModal()" class="material-icons">close</span>
+    <span *ngIf="!modal" (click)="goBack()" class="material-icons" id="back">arrow_back</span>
+    <h1>{{title}}</h1>
+    <form class="modal-form" [formGroup]="form" (ngSubmit)="submitForm()">
+      <h2>Name:</h2>
+      <input class="modal-form-input" type="text" formControlName="name">
+      <div class="phone-header">
+        <h2>Phone numbers:</h2>
+        <div>
+          <i (click)="addPhoneField()" class="material-icons">add</i>
+        </div>
+      </div>
+      <div class="number-field" *ngFor="let item of [].constructor(numberOfPhoneInputs); let ind = index"
+           formArrayName="phoneNumbers">
+        <input class="modal-form-input phone" (input)="pushToArr($event,ind)" type="tel" value="+380">
+        <i *ngIf="ind" (click)="removeLastPhone(ind)" class="material-icons">delete</i>
+      </div>
+      <p class="error-message" *ngIf="form.get('phoneNumbers')?.invalid">sample: +380178957889</p>
+      <button type="submit" [disabled]="form.invalid">{{btnName}}</button>
+    </form>
+  </div>
+</div>

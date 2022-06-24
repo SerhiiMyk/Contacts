@@ -1,0 +1,125 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background: rgba(26, 26, 26, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-div {
+    position: relative;
+    background-color: white;
+    padding: 50px;
+    width: 400px;
+
+    span {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      -webkit-text-stroke: 1px black;
+      cursor: pointer;
+    }
+
+    #back {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      -webkit-text-stroke: 1px black;
+    }
+
+    .phone-header {
+      display: flex;
+      width: 300px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 32px;
+      font-weight: 500;
+      font-size: 30px;
+    }
+
+    h2 {
+      display: inline-block;
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+
+
+  &-form {
+    margin-top: 29px;
+
+    &-input {
+      width: 250px;
+      height: 50px;
+      padding: 5px 10px;
+      margin: 10px 0;
+      border: 1px solid rgba(48, 50, 71, 0.1);
+      border-radius: 5px;
+      font-size: 20px;
+      outline-style: none;
+      color: #303247;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+
+
+    button {
+      margin-top: 20px;
+      width: 300px;
+      height: 50px;
+      background: #F7E308;
+      border-radius: 5px;
+      font-size: 20px;
+      line-height: 24px;
+      font-weight: 500;
+      border: none;
+      color: black;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten(#F7E308, 10%);
+      }
+
+      &:disabled {
+        background: rgba(48, 50, 71, 0.1);
+      }
+    }
+
+    .error-message {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 14px;
+      color: rgba(238, 38, 38, 1);
+    }
+
+    .number-field {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+i {
+  display: inline-block;
+  font-size: 30px;
+  cursor: pointer;
+  color: grey;
+
+  &:hover {
+    color: darken(grey, 30%)
+  }
+}
+

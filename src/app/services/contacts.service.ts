@@ -26,14 +26,19 @@ export class ContactsService {
 
   addContact(newContact: IContact): void {
     this.httpClient.post(`${ environment.API }adduser`, newContact)
+      .subscribe(() => {
+      }, (e) => console.log('add:', e.status))
   }
 
   updateContact(id: number, editContact: IContact): void {
     this.httpClient.put(`${ environment.API }updateuser/${ id }`, editContact)
+      .subscribe(() => {
+      }, (e) => console.log('update:', e.status))
   }
 
   deleteContact(id: number): void {
     this.httpClient.delete(`${ environment.API }deleteuser/${ id }`)
-      .subscribe(() =>{},(e) => e.status)
+      .subscribe(() => {
+      }, (e) => console.log('delete:', e.status))
   }
 }

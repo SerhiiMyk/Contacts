@@ -24,13 +24,14 @@
       </div>
       <span (click)="delete(contact.id)" class="material-icons">delete</span>
     </div>
+    <p *ngIf="contacts.length === 0" class="not-found">Sorry, but nothing was found, please try again...</p>
     <mat-paginator
       [length]="length"
       [pageSize]="10"
       [pageSizeOptions]="[5,10,15]"
-      (page)="onPageChange($event)">
+      (page)="onPageChange($event)" >
     </mat-paginator>
   </div>
 </div>
-<app-add-contact-modal *ngIf="showModal"></app-add-contact-modal>
+<app-add-contact-modal *ngIf="showModal" (modalEmit)="emitHandler($event)"></app-add-contact-modal>
 

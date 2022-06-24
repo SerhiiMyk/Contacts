@@ -1,1 +1,8 @@
-<p>contact-details-page works!</p>
+<div class="details-wrap">
+  <div class="form-container">
+    <app-add-contact-modal
+      [modal]="false" [contact]="contactData"
+      [numberOfPhoneInputs]="length">
+    </app-add-contact-modal>
+  </div>
+</div>

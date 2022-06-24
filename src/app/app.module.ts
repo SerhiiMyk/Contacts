@@ -7,7 +7,7 @@ import { ContactsPageComponent } from './components/contacts-page/contacts-page.
 import { ContactDetailsPageComponent } from './components/contact-details-page/contact-details-page.component';
 import { AddContactModalComponent } from './components/add-contact-modal/add-contact-modal.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
@@ -24,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatIconModule

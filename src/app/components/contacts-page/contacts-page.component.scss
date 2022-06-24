@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   padding: 50px;
-  min-width: 500px;
+  min-width: 665px;
 
   &-wrap {
     padding: 30px 30px 10px 30px;
@@ -155,7 +155,14 @@
       }
     }
   }
-  mat-paginator{
+
+  .not-found {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  mat-paginator {
     margin-top: 15px;
+    width: 390px;
   }
 }
