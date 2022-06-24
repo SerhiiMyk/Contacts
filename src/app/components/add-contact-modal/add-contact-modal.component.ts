@@ -34,9 +34,9 @@ export class AddContactModalComponent implements OnChanges {
       this.title = 'Edit contact'
       this.btnName = 'Edit'
       this.form.controls['name'].setValue(this.contact.name)
-      let arr = document.getElementsByClassName('phone')
-      for (let i = 0; i < arr.length; i++) {
-        (arr[i] as HTMLInputElement).value = this.contact.phoneNumbers[i]
+      let inputArr = document.getElementsByClassName('phone')
+      for (let i = 0; i < inputArr.length; i++) {
+        (inputArr[i] as HTMLInputElement).value = this.contact.phoneNumbers[i]
       }
     }
   }

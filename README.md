@@ -21,3 +21,5 @@ all fields must be filled in, and the phone number must be recorded according to
 
 Once all the fields are filled in correctly, the button will become active.
 To save all changes on the server you need to click on the create/edit button
+
+*It is only front-end part of the app, so you can use it only with server part
